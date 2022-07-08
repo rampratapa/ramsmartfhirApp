@@ -21,8 +21,14 @@
                       }
                     }
                   });
-     var encnt = smart.patient.api.fetchAll({
-                    type: 'Encounter' });
+    var encnt = smart.patient.api.fetchAll({
+                    type: 'Encounter',
+                     query: {
+                      status: {
+                        $or: ['onhold','cancelled' ]
+                      }
+                    }
+                  });
         $.when(pt, obv,encnt).fail(onError);
 
         $.when(pt, obv,encnt).done(function(patient, obv,encnt) {
