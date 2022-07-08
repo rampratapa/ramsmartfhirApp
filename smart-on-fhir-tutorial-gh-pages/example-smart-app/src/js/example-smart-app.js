@@ -93,6 +93,11 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+      encounter: [{
+        id :{value: ''},
+        status: {value: ''},
+        servicetype:{value:''}
+      }]
     };
   }
 
