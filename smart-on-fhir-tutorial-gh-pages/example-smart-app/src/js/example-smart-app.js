@@ -22,7 +22,7 @@
                     }
                   });
      var encnt = smart.patient.api.fetchAll({
-                    type: 'Encounter');
+                    type: 'Encounter' });
         $.when(pt, obv,encnt).fail(onError);
 
         $.when(pt, obv,encnt).done(function(patient, obv,encnt) {
