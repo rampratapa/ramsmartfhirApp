@@ -25,9 +25,7 @@
                     type: 'Encounter',
                      query: {
                       status: {
-                        $or: ['onhold',
-                              'in-progress', 'cancelled'
-                               ]
+                        $or: ['onhold', 'cancelled' ]
                       }
                     }
                   }
