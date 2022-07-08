@@ -28,14 +28,13 @@
                         $or: ['onhold', 'cancelled' ]
                       }
                     }
-                  }
                   });
         $.when(pt, obv,encnt).fail(onError);
 
         $.when(pt, obv,encnt).done(function(patient, obv,encnt) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
-          var medreqId = encnt.id
+          var medreqId = encnt.id;
            console.log('encnt', encnt);
           var fname = '';
           var lname = '';
