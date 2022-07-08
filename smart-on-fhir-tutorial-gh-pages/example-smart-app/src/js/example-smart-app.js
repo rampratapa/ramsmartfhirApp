@@ -23,9 +23,9 @@
                   });
      var encnt = smart.patient.api.fetchAll({
                     type: 'Encounter',
-                     query: {
-                      status: {
-                        $or: ['onhold', 'cancelled' ]
+                    query: {
+                      code: {
+                        $or: ['onhold', 'cancelled']
                       }
                     }
                   });
