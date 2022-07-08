@@ -22,13 +22,7 @@
                     }
                   });
      var encnt = smart.patient.api.fetchAll({
-                    type: 'Encounter',
-                    query: {
-                      code: {
-                        $or: ['onhold', 'cancelled']
-                      }
-                    }
-                  });
+                    type: 'Encounter');
         $.when(pt, obv,encnt).fail(onError);
 
         $.when(pt, obv,encnt).done(function(patient, obv,encnt) {
