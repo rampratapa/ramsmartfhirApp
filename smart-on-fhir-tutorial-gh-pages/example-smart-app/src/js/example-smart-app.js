@@ -21,8 +21,10 @@
                       }
                     }
                   });
-
-        $.when(pt, obv).fail(onError);
+     var medreq = smart.patient.api.fetchAll({
+                    type: 'MedicationRequest'
+                  });
+        $.when(pt, obv,medreq).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
