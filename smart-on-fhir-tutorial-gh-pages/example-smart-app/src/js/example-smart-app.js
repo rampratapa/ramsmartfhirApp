@@ -29,13 +29,22 @@
                       }
                     }
                   });
-        $.when(pt, obv,encnt).fail(onError);
+        
+        var covrage = smart.patient.api.fetchAll({
+                    type: 'Coverage',
+                     query: {
+                      patient: {
+                        $or: [patient.id ]
+                      }
+                    }
+                  });
+        $.when(pt, obv,encnt,covrage).fail(onError);
 
-        $.when(pt, obv,encnt).done(function(patient, obv,encnt) {
+        $.when(pt, obv,encnt,covrage).done(function(patient, obv,encnt,covrage) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
-          var medreqId = encnt.id;
-           console.log('encnt', encnt);
+          var enct = encnt.id;
+          console.log('encnt', encnt);
           var fname = '';
           var lname = '';
 
@@ -53,12 +62,13 @@
           var ldl = byCodes('2089-1');
 
           var p = defaultPatient();
+          p.id =  patient.id;
           p.birthdate = patient.birthDate;
           p.gender = gender;
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
-
+          console.log('Coverage-Id', covrage);
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
           }
@@ -84,6 +94,7 @@
 
   function defaultPatient(){
     return {
+      id: {value: ''},
       fname: {value: ''},
       lname: {value: ''},
       gender: {value: ''},
@@ -93,6 +104,11 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+      covId: {value: ''},
+      covStatus: {value: ''},
+      covSubId: {value: ''},
+      covStart: {value: ''},
+      covEnd: {value: ''},
       encounter: [{
         id :{value: ''},
         status: {value: ''},
@@ -130,6 +146,7 @@
   }
 
   window.drawVisualization = function(p) {
+    $('#id').html(p.id);
     $('#holder').show();
     $('#loading').hide();
     $('#fname').html(p.fname);
