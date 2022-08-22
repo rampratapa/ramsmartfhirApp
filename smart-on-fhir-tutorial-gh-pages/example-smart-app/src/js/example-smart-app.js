@@ -13,7 +13,7 @@
        var usr =smart.user.read();
        var userType = smart.user.resourceType  ;
        console.log( "userType " + userType);
-       console.log( "usr " + usr);
+       console.log( "usr " + JSON.stringify(usr)  );
       // console.log('userId', userId);
      }
  
