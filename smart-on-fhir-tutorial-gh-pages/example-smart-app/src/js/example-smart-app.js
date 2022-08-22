@@ -14,7 +14,7 @@
        var userType = smart.user.resourceType  ;
        console.log( "userType " + userType);
        console.log( "usr " + usr);
-       console.log('userId', userId);
+      // console.log('userId', userId);
      }
  
       if (smart.hasOwnProperty('patient')) {
