@@ -10,8 +10,8 @@
     function onReady(smart)  {
      if (smart.hasOwnProperty('user')) {
        alert(smart.hasOwnProperty('user'));
-       var userId = smart.user.fhirUser ;
-       console.log( ".user.fhirUser " + userId);
+       var userId = smart.user  ;
+       console.log( "1.user.fhirUser " + userId);
        console.log('userId', userId);
      }
  
