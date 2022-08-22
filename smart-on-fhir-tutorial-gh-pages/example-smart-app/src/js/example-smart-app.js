@@ -10,9 +10,9 @@
     function onReady(smart)  {
      if (smart.hasOwnProperty('user')) {
        alert(smart.hasOwnProperty('user'));
-       var user = smart.user;
-       console.log( user);
-       console.log('user', user);
+       var userId = smart.user.userId;
+       console.log( userId);
+       console.log('userId', userId);
      }
  
       if (smart.hasOwnProperty('patient')) {
