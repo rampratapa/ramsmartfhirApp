@@ -12,6 +12,7 @@
        alert(smart.hasOwnProperty('user'));
        var user = smart.user;
        console.log( user);
+       console.log('user', user);
      }
  
       if (smart.hasOwnProperty('patient')) {
