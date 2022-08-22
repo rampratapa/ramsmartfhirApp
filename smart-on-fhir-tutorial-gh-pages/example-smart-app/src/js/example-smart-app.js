@@ -10,7 +10,7 @@
     function onReady(smart)  {
      if (smart.hasOwnProperty('user')) {
        alert(smart.hasOwnProperty('user'));
-       var userId = smart.user.userId;
+       var userId = smart.user.id;
        console.log( userId);
        console.log('userId', userId);
      }
