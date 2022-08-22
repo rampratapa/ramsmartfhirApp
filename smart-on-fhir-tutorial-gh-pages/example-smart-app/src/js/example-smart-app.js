@@ -10,7 +10,7 @@
     function onReady(smart)  {
      if (smart.hasOwnProperty('user')) {
        var user = smart.user;
-       console.log(json.stringify(user));
+       console.log( user);
      }
       alert(smart.hasOwnProperty('user'));
       if (smart.hasOwnProperty('patient')) {
