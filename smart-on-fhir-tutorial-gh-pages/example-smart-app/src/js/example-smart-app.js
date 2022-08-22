@@ -10,8 +10,10 @@
     function onReady(smart)  {
      if (smart.hasOwnProperty('user')) {
        alert(smart.hasOwnProperty('user'));
-       var userId = smart.user  ;
-       console.log( "1.user.fhirUser " + userId);
+       var usr =smart.user.read();
+       var userType = smart.user.resourceType  ;
+       console.log( "userType " + userType);
+       console.log( "usr " + usr);
        console.log('userId', userId);
      }
  
